@@ -2,9 +2,9 @@ import babel from 'rollup-plugin-babel';
 import sourcemaps from 'rollup-plugin-sourcemaps';
 
 export default {
-  input: 'dist/row-merge.js',
+  input: 'dist/select-to-checkbox.js',
   output: {
-    file: 'dist/row-merge-bundle.js',
+    file: 'dist/select-to-checkbox-bundle.js',
     format: 'iife',
     name: "RowMergeBundle",
     globals: {

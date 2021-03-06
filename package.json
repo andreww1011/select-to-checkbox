@@ -1,7 +1,7 @@
 {
-  "name": "row-merge",
+  "name": "select-to-checkbox",
   "version": "1.0.0",
-  "description": "Merge identical table rows jQuery plugin.",
+  "description": "Convert select element to checkboxes or radio buttons jQuery plugin.",
   "scripts": {
     "clean": "rimraf dist && rimraf coverage",
     "build": "npm run compile:js && npm run copy:html && npm run bundle && npm run minify",
@@ -9,7 +9,7 @@
     "compile:js": "tsc",
     "copy:html": "cpx 'src/**.{html,css}' dist",
     "bundle": "rollup -c",
-    "minify": "uglifyjs dist/row-merge-bundle.js --output dist/row-merge-bundle.min.js"
+    "minify": "uglifyjs dist/select-to-checkbox-bundle.js --output dist/select-to-checkbox-bundle.min.js"
   },
   "author": {
     "name": "Andrew Wagner"
