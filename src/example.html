@@ -1,0 +1,312 @@
+<!-- /*! 
+ *  Convert select element to checkboxes or radio buttons jQuery plugin.
+ *  Copyright (C) 2021  Andrew Wagner  github.com/andreww1011
+ *
+ *  This library is free software; you can redistribute it and/or
+ *  modify it under the terms of the GNU Lesser General Public
+ *  License as published by the Free Software Foundation; either
+ *  version 2.1 of the License, or (at your option) any later version.
+ * 
+ *  This library is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ *  Lesser General Public License for more details.
+ * 
+ *  You should have received a copy of the GNU Lesser General Public
+ *  License along with this library; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301
+ *  USA
+ */ -->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Select To Checkbox Plugin</title>
+  </head>
+
+  <body>
+    <!-- Load jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Load Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Load the plugin bundle. -->
+    <link rel="stylesheet" href="select_to_checkbox.css" />
+    <script src="select-to-checkbox-bundle.min.js"></script>
+
+    <section class="alternate page-heading">
+      <div class="container">
+        <header>
+          <h1>Convert select element to checkboxes or radio buttons</h1>
+        </header>
+        <p class="lead"></p>
+    </section>
+    <hr>
+    <form class="container" method="GET" id="form">
+      <div class="row">
+        <div class="col-6">
+          <div class="row">
+            <h4 class="col-12">Default Multiple Select</h4>
+          </div>
+          <div class="form-group row">
+            <label class="col-4 col-form-label" for="animals1">Animals</label>
+            <div class="col-8">
+              <select multiple name="animals1">
+                <option value="bear">Bear</option>
+                <option value="ant">Ant</option>
+                <option value="salamander">Salamander</option>
+                <option value="owl">Owl</option>
+                <option value="frog">Frog</option>
+                <option value="shark">Shark</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="row">
+            <h4 class="col-12">Multiple Select to Checkboxes</h4>
+          </div>
+          <div class="form-group row">
+            <label class="col-4 col-form-label" for="animals2">Animals</label>
+            <div class="col-8">
+              <select multiple name="animals2" id="animals2">
+                <option value="bear">Bear</option>
+                <option value="ant">Ant</option>
+                <option value="salamander">Salamander</option>
+                <option value="owl">Owl</option>
+                <option value="frog">Frog</option>
+                <option value="shark">Shark</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="row">
+            <h4 class="col-12">Default Single Select</h4>
+          </div>
+          <div class="form-group row">
+            <label class="col-4 col-form-label" for="animals3">Animals</label>
+            <div class="col-8">
+              <select name="animals3">
+                <option value="bear">Bear</option>
+                <option value="ant">Ant</option>
+                <option value="salamander">Salamander</option>
+                <option value="owl">Owl</option>
+                <option value="frog">Frog</option>
+                <option value="shark">Shark</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="row">
+            <h4 class="col-12">Single Select to Radios</h4>
+          </div>
+          <div class="form-group row">
+            <label class="col-4 col-form-label" for="animals4">Animals</label>
+            <div class="col-8">
+              <select name="animals4" id="animals4">
+                <option value="bear">Bear</option>
+                <option value="ant">Ant</option>
+                <option value="salamander">Salamander</option>
+                <option value="owl">Owl</option>
+                <option value="frog">Frog</option>
+                <option value="shark">Shark</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <div class="row">
+            <h4 class="col-12">Checkboxes With Pre-selects & Disabled</h4>
+          </div>
+          <div class="form-group row">
+            <label class="col-4 col-form-label" for="cars1">Cars</label>
+            <div class="col-8">
+              <select multiple name="cars1" id="cars1">
+                <option value="1" selected>Toyota</option>
+                <option value="2">Honda</option>
+                <option value="3">Ford</option>
+                <option value="4" disabled >BMW</option>
+                <option value="5" selected disabled label="Chevy">Chevrolet</option>
+                <option value="6">Kia</option>
+                <option value="7">Mercedes</option>
+                <option value="8">Subaru</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="row">
+            <h4 class="col-12">Radios With Pre-selects & Disabled</h4>
+          </div>
+          <div class="form-group row">
+            <label class="col-4 col-form-label" for="cars2">Cars</label>
+            <div class="col-8">
+              <select name="cars2" id="cars2">
+                <option value="1" selected>Toyota</option>
+                <option value="2">Honda</option>
+                <option value="3">Ford</option>
+                <option value="4" disabled >BMW</option>
+                <option value="5" selected disabled label="Chevy">Chevrolet</option>
+                <option value="6">Kia</option>
+                <option value="7">Mercedes</option>
+                <option value="8">Subaru</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row container">
+        <button id="b1" type="button">Enable BMW</button>
+        <button id="b2" type="button">Disable BMW</button>
+        <button id="b3" type="button">Enable Group</button>
+        <button id="b4" type="button">Disable Group</button>
+        <button id="b5" type="button">Select Honda</button>
+        <button id="b5a" type="button">Deselect Honda</button>
+        <button id="b6" type="button">Select Ford</button>
+        <button id="b6a" type="button">Deselect Ford</button>
+      </div>
+      
+      <div class="row">
+        <div class="col-6">
+          <div class="row">
+            <h4 class="col-12">Checkboxes With Items Added Via JS</h4>
+          </div>
+          <div class="form-group row">
+            <label class="col-4 col-form-label" for="cities1">Cities</label>
+            <div class="col-8">
+              <select multiple name="cities1" id="cities1">
+                <option value="1">London</option>
+                <option value="2" selected >New York</option>
+                <option value="3" selected disabled>Los Angeles</option>
+                <option value="4" disabled>Paris</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="row">
+            <h4 class="col-12">Radios With Items Added Via JS</h4>
+          </div>
+          <div class="form-group row">
+            <label class="col-4 col-form-label" for="cities2">Cities</label>
+            <div class="col-8">
+              <select name="cities2" id="cities2">
+                <option value="1">London</option>
+                <option value="2" selected >New York</option>
+                <option value="3" selected disabled>Los Angeles</option>
+                <option value="4" disabled>Paris</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="submit">Submit Form</button>
+    </form>
+    <div class="container">
+      <button id="jsonbtn1">Get Json (include disabled)</button>
+    </div>
+    <div class="container">
+      <span id="jsonresult1"></span>
+    </div>
+    <div class="container">
+      <button id="jsonbtn2">Get Json (exclude disabled)</button>
+    </div>
+    <div class="container">
+      <span id="jsonresult2"></span>
+    </div>
+    <script>
+      // Use the plugin once the DOM has been loaded.
+      $(function () {
+        // Apply the plugin 
+        var animals2 = $('#animals2').selectToCheckbox();
+        var animals4 = $('#animals4').selectToCheckbox();
+        var cars1 = $('#cars1').selectToCheckbox();
+        var cars2 = $('#cars2').selectToCheckbox();
+        $('#b1').click((e) => {
+          cars1.enableOption('4');
+          cars2.enableOption('4');
+        });
+        $('#b2').click((e) => {
+          cars1.disableOption('4');
+          cars2.disableOption('4');
+        });
+        $('#b3').click((e) => {
+          cars1.enable();
+          cars2.enable();
+        });
+        $('#b4').click((e) => {
+          cars1.disable();
+          cars2.disable();
+        });
+        $('#b5').click((e) => {
+          cars1.selectOption('2');
+          cars2.selectOption('2');
+        });
+        $('#b5a').click((e) => {
+          cars1.deselectOption('2');
+          cars2.deselectOption('2');
+        });
+        $('#b6').click((e) => {
+          cars1.selectOption('3');
+          cars2.selectOption('3');
+        });
+        $('#b6a').click((e) => {
+          cars1.deselectOption('3');
+          cars2.deselectOption('3');
+        });
+        var s = [["San Francisco","a"],
+                  ["Milan","b",false,true],
+                  ["Singapore","c",true],
+                  ["Berlin","d",true,true],
+                 ];
+        var cities1 = $('#cities1').selectToCheckbox({
+          items: s,
+        });
+        var cities2 = $('#cities2').selectToCheckbox({
+          items: s,
+        });
+        $('#jsonbtn1').click((e) => {
+          var b = true;
+          var result = {
+            ...JSON.parse(animals2.getSelectedOptionsAsJson(b)),
+            ...JSON.parse(animals4.getSelectedOptionsAsJson(b)),
+            ...JSON.parse(cars1.getSelectedOptionsAsJson(b)),
+            ...JSON.parse(cars2.getSelectedOptionsAsJson(b)),
+            ...JSON.parse(cities1.getSelectedOptionsAsJson(b)),
+            ...JSON.parse(cities2.getSelectedOptionsAsJson(b)),
+          }
+          $('#jsonresult1').text(JSON.stringify(result,null,"  "));
+        });
+        $('#jsonbtn2').click((e) => {
+          var b = false;
+          var result = {
+            ...JSON.parse(animals2.getSelectedOptionsAsJson(b)),
+            ...JSON.parse(animals4.getSelectedOptionsAsJson(b)),
+            ...JSON.parse(cars1.getSelectedOptionsAsJson(b)),
+            ...JSON.parse(cars2.getSelectedOptionsAsJson(b)),
+            ...JSON.parse(cities1.getSelectedOptionsAsJson(b)),
+            ...JSON.parse(cities2.getSelectedOptionsAsJson(b)),
+          }
+          $('#jsonresult2').text(JSON.stringify(result,null,"  "));
+        });
+        $('#form').on('keypress keyup', function(e) {
+          var keyCode = e.keyCode || e.which;
+          if (keyCode === 13) { 
+            e.preventDefault();
+            return false;
+          }
+        });
+      });
+    </script>
+  </body>
+
+</html>
+
