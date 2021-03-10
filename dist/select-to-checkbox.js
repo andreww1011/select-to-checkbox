@@ -65,8 +65,24 @@ $.fn.selectToCheckbox = function (args) {
             return selectToCheckbox.getSelectedOptionsAsJson(includeDisabled);
         }
     };
+    // store applied element
+    $.fn.selectToCheckbox.applied.push(methods);
     return methods;
 };
+// activate plugin by targeting selector
+$(function () {
+    // factory defaults
+    var selector = typeof $.fn.selectToCheckbox.selector === 'undefined' ? 'select.stc' : $.fn.selectToCheckbox.selector;
+    // target
+    var s = $(selector);
+    s.each(function (i, e) {
+        $(e).selectToCheckbox();
+    });
+});
+// store collection of applied elements
+$.fn.selectToCheckbox.applied = new Array();
+// define the plugin's global default selector.
+$.fn.selectToCheckbox.selector = undefined;
 // define the plugin's global default options.
 $.fn.selectToCheckbox.args = {};
 //# sourceMappingURL=select-to-checkbox.js.map
