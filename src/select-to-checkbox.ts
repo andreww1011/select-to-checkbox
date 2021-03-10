@@ -67,8 +67,29 @@ import SelectToCheckbox from './SelectToCheckbox';
             return selectToCheckbox.getSelectedOptionsAsJson(includeDisabled);
         }
     };
+
+    // store applied element
+    ($.fn as any).selectToCheckbox.applied.push(methods);
+
     return methods;
 };
+
+// activate plugin by targeting selector
+$(function () {
+    // factory defaults
+    let selector: string = typeof ($.fn as any).selectToCheckbox.selector === 'undefined' ? 'select.stc' : ($.fn as any).selectToCheckbox.selector;
+    // target
+    let s: JQuery<HTMLElement> = $(selector);
+    s.each((i,e) => {
+        ($(e) as any).selectToCheckbox();
+    });
+});
+
+// store collection of applied elements
+($.fn as any).selectToCheckbox.applied = new Array();
+
+// define the plugin's global default selector.
+($.fn as any).selectToCheckbox.selector = undefined;
 
 // define the plugin's global default options.
 ($.fn as any).selectToCheckbox.args = {};
