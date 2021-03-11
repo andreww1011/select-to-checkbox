@@ -18,6 +18,7 @@
  *  USA
  */
 interface Args {
+    selector: string,
     allowEnablingAndDisabling: boolean,
     items: Array<[label: string, value: string, selected?: boolean, disabled?: boolean]>,
 }

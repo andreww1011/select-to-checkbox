@@ -47,7 +47,9 @@ var SelectToCheckbox = /** @class */ (function () {
         this.disabled = select.disabled;
         this.allowEnablingAndDisabling = args.allowEnablingAndDisabling;
         this.div = document.createElement('div');
-        this.div.className = select.className + " stc";
+        this.div.className = select.className;
+        if (!this.div.classList.contains('stc'))
+            this.div.classList.add('stc');
         this.div.id = select.id;
         // items
         var array = selectTarget.find('option').toArray();

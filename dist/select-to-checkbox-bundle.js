@@ -83,7 +83,8 @@
         this.disabled = select.disabled;
         this.allowEnablingAndDisabling = args.allowEnablingAndDisabling;
         this.div = document.createElement('div');
-        this.div.className = select.className + " stc";
+        this.div.className = select.className;
+        if (!this.div.classList.contains('stc')) this.div.classList.add('stc');
         this.div.id = select.id; // items
 
         var array = selectTarget.find('option').toArray();
@@ -396,10 +397,26 @@
 
           return selectToCheckbox.getSelectedOptionsAsJson(includeDisabled);
         }
-      };
-      return methods;
-    }; // define the plugin's global default options.
+      }; // store applied element
 
+      $__default['default'].fn.selectToCheckbox.applied.push(methods);
+      return methods;
+    }; // activate plugin by targeting selector
+
+
+    $__default['default'](function () {
+      // factory defaults
+      var selector = typeof $__default['default'].fn.selectToCheckbox.selector === 'undefined' ? 'select.stc' : $__default['default'].fn.selectToCheckbox.selector; // target
+
+      var s = $__default['default'](selector);
+      s.each(function (i, e) {
+        $__default['default'](e).selectToCheckbox();
+      });
+    }); // store collection of applied elements
+
+    $__default['default'].fn.selectToCheckbox.applied = new Array(); // define the plugin's global default selector.
+
+    $__default['default'].fn.selectToCheckbox.selector = undefined; // define the plugin's global default options.
 
     $__default['default'].fn.selectToCheckbox.args = {};
 
