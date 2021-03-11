@@ -49,6 +49,9 @@
     $('#pets').selectToCheckbox();
   });
 &lt/script&gt</code></pre></li>
+    <li>Or append the class <code>stc</code> to the select element and have it be targeted automatically.
+    <pre><code>&ltselect <b>class="stc"</b> multiple id="pets" name="pets"&gt</code></pre>
+    </li>
   </ol>
   <p align="center">
     <img src="./screenshot.png" title="screenshot">
@@ -64,7 +67,7 @@
   </ul>
 </p>
 
-# Methods
+# API
 <p>The following methods are exposed on the plugin:
   <ul>
     <li><code>hasOption(value:string)</code> - returns true if the option with the specified <i>value</i> attribute exists, otherwise false.</li>
@@ -79,4 +82,13 @@
     <li><code>getSelectedOptionsAsJson(includeDisabled=true)</code> - returns a JSON string of the selected options' values.</li>
   </ul>
 </p>
+<p>The following global fields are exposed on the jQuery extension point:
+  <ul>
+    <li><code>$.fn.selectToCheckbox.selector</code> - the selector string used to automatically target and apply the plugin. <i> default = "select.stc"</i></li>
+    <li><code>$.fn.selectToCheckbox.applied</code> - a collection of all element groups applied by the plugin.</li>
+  </ul>
+</p>
+
+
+
   
